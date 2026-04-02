@@ -273,7 +273,7 @@
       gap: 8px;
     }
 
-    /* BENEFITS SECTION (cards corrigidos) */
+    /* BENEFITS SECTION */
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -315,6 +315,156 @@
     .benefit-card h4 {
       font-size: 1.2rem;
       margin-bottom: 8px;
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 32px 0 48px;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg-glass);
+      border: 1px solid rgba(255, 122, 0, 0.15);
+      border-radius: 24px;
+      padding: 24px;
+      transition: all 0.2s;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--primary-orange);
+      transform: translateY(-3px);
+    }
+
+    .testimonial-stars {
+      color: var(--price-gold);
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary-orange), var(--primary-soft));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      margin: 48px 0 32px;
+      background: linear-gradient(125deg, rgba(255, 122, 0, 0.08), rgba(46, 204, 113, 0.05));
+      border-radius: 36px;
+      padding: 32px 28px;
+      border: 1px solid rgba(255, 122, 0, 0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-details {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 16px;
+      border-radius: 60px;
+      width: fit-content;
+      transition: all 0.2s;
+    }
+
+    .contact-item:hover {
+      background: rgba(255, 122, 0, 0.1);
+      transform: translateX(5px);
+    }
+
+    .contact-icon {
+      font-size: 1.2rem;
+    }
+
+    .contact-item a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary-soft);
+    }
+
+    .contact-support {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 24px;
+      padding: 20px;
+      text-align: center;
+      min-width: 220px;
+    }
+
+    .contact-support h4 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: var(--primary-soft);
+    }
+
+    .support-hours {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 10px;
     }
 
     /* before / after flow */
@@ -370,7 +520,7 @@
       color: #bcf0d4;
     }
 
-    /* FINAL CTA (CORRIGIDO: cores harmonizadas com laranja/verde) */
+    /* FINAL CTA */
     .final-cta-section {
       margin: 48px 0 32px;
       background: linear-gradient(125deg, rgba(255, 122, 0, 0.12), rgba(46, 204, 113, 0.08));
@@ -492,6 +642,16 @@
       .final-text h3 {
         font-size: 1.4rem;
       }
+
+      .contact-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-item {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -529,7 +689,6 @@
         </div>
       </div>
 
-      <!-- Visual caos ➜ ordem animado (sem cores conflitantes) -->
       <div class="visual-panel reveal">
         <div class="grid-blocks">
           <div class="chaos-card">
@@ -562,7 +721,7 @@
       </div>
     </div>
 
-    <!-- Seção Benefícios (cards já com laranja e verde suave) -->
+    <!-- Seção Benefícios -->
     <div class="reveal" id="beneficios">
       <div class="section-title">🧠 Organização que faz sentido</div>
       <div class="section-desc">Você nunca mais vai precisar procurar aquele arquivo importante em meio a centenas de
@@ -591,6 +750,47 @@
           <h4>Portátil e direto</h4>
           <div style="color: var(--text-muted); font-size: 0.85rem;">Abra o .exe, escolha a pasta Downloads, clique e
             pronto. Zero instalação.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO DEPOIMENTOS -->
+    <div class="reveal">
+      <div class="section-title">⭐ Quem já organizou, aprova</div>
+      <div class="section-desc">Mais de 2.000 usuários já transformaram o caos em produtividade.</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"Minha pasta Downloads parecia um lixo. Depois que baixei o OrganizaFiles, tudo ficou no lugar certo em segundos. Recomendo demais!"</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">CM</div>
+            <div>
+              <div class="testimonial-name">Carlos Mendes</div>
+              <div class="testimonial-role">Designer Gráfico</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"Eu gastava horas organizando arquivos. Agora é um clique e pronto. 40 reais foi barato pro que faz."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">FS</div>
+            <div>
+              <div class="testimonial-name">Fernanda Souza</div>
+              <div class="testimonial-role">Assessoria Contábil</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"Simples, rápido e resolve um problema que todo mundo tem. Vale cada centavo. Já indiquei para todo mundo!"</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RP</div>
+            <div>
+              <div class="testimonial-name">Ricardo Pereira</div>
+              <div class="testimonial-role">Advogado</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -630,7 +830,36 @@
       </div>
     </div>
 
-    <!-- FINAL CTA CORRIGIDO: cores alinhadas com o restante (laranja como destaque secundário, verde principal) -->
+    <!-- SEÇÃO CONTATO -->
+    <div class="contact-section reveal">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>📞 Precisa de ajuda?</h3>
+          <div style="color: var(--text-muted);">Estamos aqui para você! Tire dúvidas, relate problemas ou dê sugestões.</div>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <a href="https://wa.me/5531992877639" target="_blank">(31) 99287-7639</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:suporte@organizafiles.com.br">suporte@organizafiles.com.br</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">⏰</span>
+              <span>Segunda a Sexta, 9h às 18h</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-support">
+          <h4>💬 Atendimento rápido</h4>
+          <div style="font-size: 0.85rem;">Clique no WhatsApp e fale conosco agora mesmo!</div>
+          <div class="support-hours">Resposta média: 15 minutos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
     <div class="final-cta-section reveal">
       <div class="final-wrapper">
         <div class="final-text">
@@ -677,7 +906,7 @@
     }, { threshold: 0.2 });
     revealItems.forEach(el => obs.observe(el));
 
-    // Animação suave no hero visual: simular movimento de arquivos virando pastas (só para engajamento visual)
+    // Animação suave no hero visual
     const chaosDiv = document.getElementById('chaosContainer');
     const orderDiv = document.getElementById('orderContainer');
     const chaosTags = chaosDiv ? Array.from(chaosDiv.querySelectorAll('.tag')) : [];
@@ -685,7 +914,6 @@
 
     function gentleTransition() {
       if (!chaosTags.length) return;
-      // efeito: a cada 2 segundos um "arquivo" brilha e depois some sutilmente refletindo organização
       const idx = animStep % chaosTags.length;
       chaosTags.forEach((t, i) => {
         if (i === idx) {
@@ -697,7 +925,6 @@
               t.style.transform = 'scale(1)';
             }
           }, 300);
-          // faz piscar a pasta correspondente no after (opcional)
           if (orderDiv) {
             const folders = orderDiv.querySelectorAll('.tag-clean');
             if (folders[idx % folders.length]) {
@@ -713,7 +940,7 @@
     }
     if (chaosTags.length) setInterval(gentleTransition, 1800);
 
-    // Efeito before / after com brilho nos chips de arquivo "sujo"
+    // Efeito before / after
     const beforeChips = document.querySelectorAll('#beforeList .file-chip');
     let beforeIdx = 0;
     function animateBeforeChips() {
@@ -735,7 +962,7 @@
       setInterval(animateBeforeChips, 1300);
     }
 
-    // GTM / Google Ads conversion (mantendo a lógica original)
+    // GTM / Google Ads conversion
     function gtag_report_conversion(url) {
       return new Promise((resolve) => {
         var callback = function () {
@@ -770,9 +997,6 @@
         gtag_report_conversion(checkoutLink);
       });
     }
-
-    // também garante que os botões tenham consistência visual, sem interferência de cores erradas
-    // Todos os botões .btn-primary já tem verde consistente com identidade visual
   </script>
 </body>
 
