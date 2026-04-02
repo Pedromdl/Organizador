@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Organizador Downloads — Caos zero na sua pasta</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <title>OrganizaFiles — Caos zero na sua pasta</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054805527"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'AW-18054805527');
   </script>
@@ -224,14 +227,16 @@
       margin: 16px 0;
     }
 
-    .chaos-card, .order-card {
+    .chaos-card,
+    .order-card {
       background: rgba(0, 0, 0, 0.5);
       border-radius: 18px;
       padding: 14px;
       transition: all 0.2s;
     }
 
-    .chaos-title, .order-title {
+    .chaos-title,
+    .order-title {
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -479,278 +484,296 @@
       main {
         padding: 20px 16px;
       }
+
       .hero h1 {
         font-size: 2.3rem;
       }
+
       .final-text h3 {
         font-size: 1.4rem;
       }
     }
   </style>
 </head>
+
 <body>
-<main>
-  <header>
-    <div class="brand">
-      <div class="brand-icon"><span>📂</span></div>
-      <div class="brand-name">ORGANIZADOR DOWNLOADS · v2.0</div>
-    </div>
-    <div class="header-pill"><span></span> ⚡ Um clique, pastas impecáveis</div>
-  </header>
+  <main>
+    <header>
+      <div class="brand">
+        <div class="brand-icon">
+          <img src="logo.png" alt="OrganizaFiles" style="width: 32px; height: 32px; object-fit: contain;">
+        </div>
+        <div class="brand-name">ORGANIZAFILES · v2.0</div>
+      </div>
+      <div class="header-pill"><span></span> ⚡ Um clique, pastas impecáveis</div>
+    </header>
 
-  <!-- Hero principal -->
-  <div class="hero">
-    <div class="hero-left reveal">
-      <div class="hero-tag">✨ SEM DRAG AND DROP | SEM INSTALAÇÃO</div>
-      <h1>Pare de arrastar arquivos.<br>Clique uma vez.</h1>
-      <div class="hero-sub">
-        O <strong style="color:#FF7A00">Organizador Downloads</strong> analisa tipo, nome e conteúdo dos seus arquivos e os envia para pastas inteligentes: <strong>Financeiro, Estudos, Contratos, Imagens, Planilhas</strong> e muito mais.
+    <!-- Hero principal -->
+    <div class="hero">
+      <div class="hero-left reveal">
+        <div class="hero-tag">✨ SEM DRAG AND DROP | SEM INSTALAÇÃO</div>
+        <h1>Pare de arrastar arquivos.<br>Clique uma vez.</h1>
+        <div class="hero-sub">
+          O <strong style="color:#FF7A00">OrganizaFiles</strong> analisa tipo, nome e conteúdo dos seus arquivos
+          e os envia para pastas inteligentes: <strong>Financeiro, Estudos, Contratos, Imagens, Planilhas</strong> e
+          muito mais.
+        </div>
+        <div class="hero-cta-group">
+          <button class="btn-primary" id="heroCtaBtn">📥 BAIXAR ORGANIZAFILES</button>
+          <div class="hero-cta-subtext" style="font-size:0.7rem; color:#a0abb8; margin-top: 8px;">✔️ Portátil · Sem
+            cadastro · Funciona em 1 clique</div>
+        </div>
+        <div class="hero-benefits-mini">
+          <div class="mini-card"><strong>⏱️ Minutos economizados</strong><br>por dia, horas por mês</div>
+          <div class="mini-card"><strong>🧹 Downloads limpa</strong><br>organização contínua sob demanda</div>
+        </div>
       </div>
-      <div class="hero-cta-group">
-        <button class="btn-primary" id="heroCtaBtn">📥 BAIXAR ORGANIZADOR DOWNLOADS</button>
-        <div class="hero-cta-subtext" style="font-size:0.7rem; color:#a0abb8; margin-top: 8px;">✔️ Portátil · Sem cadastro · Funciona em 1 clique</div>
-      </div>
-      <div class="hero-benefits-mini">
-        <div class="mini-card"><strong>⏱️ Minutos economizados</strong><br>por dia, horas por mês</div>
-        <div class="mini-card"><strong>🧹 Downloads limpa</strong><br>organização contínua sob demanda</div>
-      </div>
-    </div>
 
-    <!-- Visual caos ➜ ordem animado (sem cores conflitantes) -->
-    <div class="visual-panel reveal">
-      <div class="grid-blocks">
-        <div class="chaos-card">
-          <div class="chaos-title">🔻 CAOS NA DOWNLOADS</div>
-          <div class="tag-group" id="chaosContainer">
-            <div class="tag">nota_2025.pdf</div>
-            <div class="tag">foto_viagem.jpg</div>
-            <div class="tag">contrato_assinado.pdf</div>
-            <div class="tag">planilha_financas.xlsx</div>
-            <div class="tag">resumo_ml.pdf</div>
-            <div class="tag">screenshot_1.png</div>
-            <div class="tag">nf_servico_03.pdf</div>
+      <!-- Visual caos ➜ ordem animado (sem cores conflitantes) -->
+      <div class="visual-panel reveal">
+        <div class="grid-blocks">
+          <div class="chaos-card">
+            <div class="chaos-title">🔻 CAOS NA DOWNLOADS</div>
+            <div class="tag-group" id="chaosContainer">
+              <div class="tag">nota_2025.pdf</div>
+              <div class="tag">foto_viagem.jpg</div>
+              <div class="tag">contrato_assinado.pdf</div>
+              <div class="tag">planilha_financas.xlsx</div>
+              <div class="tag">resumo_ml.pdf</div>
+              <div class="tag">screenshot_1.png</div>
+              <div class="tag">nf_servico_03.pdf</div>
+            </div>
+          </div>
+          <div class="order-card">
+            <div class="order-title">✨ APÓS ORGANIZAR</div>
+            <div class="tag-group" id="orderContainer">
+              <div class="tag tag-clean">📁 Financeiro/</div>
+              <div class="tag tag-clean">📁 Estudos/</div>
+              <div class="tag tag-clean">📁 Contratos/</div>
+              <div class="tag tag-clean">📁 Imagens/</div>
+              <div class="tag tag-clean">📁 Planilhas/</div>
+            </div>
           </div>
         </div>
-        <div class="order-card">
-          <div class="order-title">✨ APÓS ORGANIZAR</div>
-          <div class="tag-group" id="orderContainer">
-            <div class="tag tag-clean">📁 Financeiro/</div>
-            <div class="tag tag-clean">📁 Estudos/</div>
-            <div class="tag tag-clean">📁 Contratos/</div>
-            <div class="tag tag-clean">📁 Imagens/</div>
-            <div class="tag tag-clean">📁 Planilhas/</div>
+        <div class="order-note">
+          <span style="background: #FF7A00; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
+          O programa lê o conteúdo e distribui automaticamente — nada de pastas soltas.
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção Benefícios (cards já com laranja e verde suave) -->
+    <div class="reveal" id="beneficios">
+      <div class="section-title">🧠 Organização que faz sentido</div>
+      <div class="section-desc">Você nunca mais vai precisar procurar aquele arquivo importante em meio a centenas de
+        downloads.</div>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h4>Menos fricção</h4>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Clique em "Organizar" e volte ao que importa. O
+            resto acontece sozinho.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📂</div>
+          <h4>Pastas inteligentes</h4>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Financeiro, Estudos, Contratos, Imagens, Planilhas,
+            Arquivos Antigos e mais.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔍</div>
+          <h4>Encontre em segundos</h4>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Sem rolar uma lista infinita. Cada tipo de arquivo
+            tem seu lugar.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💻</div>
+          <h4>Portátil e direto</h4>
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Abra o .exe, escolha a pasta Downloads, clique e
+            pronto. Zero instalação.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Before & after dinâmico -->
+    <div class="reveal">
+      <div class="section-title">📁 Antes & Depois</div>
+      <div class="section-desc">Visualize a diferença entre uma pasta Downloads caótica e um sistema onde tudo tem uma
+        casa.</div>
+      <div class="flow-comparison">
+        <div class="flow-card">
+          <div class="flow-badge">🚨 ANTES (bagunça total)</div>
+          <div class="file-list" id="beforeList">
+            <span class="file-chip">nf_agosto_2024.pdf</span>
+            <span class="file-chip">imagem_fundo_site.png</span>
+            <span class="file-chip">contrato_locacao.docx</span>
+            <span class="file-chip">dados_vendas_2025.xlsx</span>
+            <span class="file-chip">artigo_ia_generativa.pdf</span>
+            <span class="file-chip">print_erro_sistema.jpg</span>
+            <span class="file-chip">guia_imposto_renda.pdf</span>
+            <span class="file-chip">orcamento_obras.xlsx</span>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-badge">✨ DEPOIS (organizado pelo software)</div>
+          <div class="file-list" id="afterList">
+            <span class="file-chip folder-chip">📁 Financeiro/</span>
+            <span class="file-chip folder-chip">📁 Contratos/</span>
+            <span class="file-chip folder-chip">📁 Estudos/</span>
+            <span class="file-chip folder-chip">📁 Imagens/</span>
+            <span class="file-chip folder-chip">📁 Planilhas/</span>
+            <span class="file-chip folder-chip">📁 Documentos fiscais/</span>
+          </div>
+          <div style="font-size:0.7rem; margin-top: 12px; color:#FFA726;">✔️ Nenhum arquivo solto — tudo classificado
           </div>
         </div>
       </div>
-      <div class="order-note">
-        <span style="background: #FF7A00; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
-        O programa lê o conteúdo e distribui automaticamente — nada de pastas soltas.
-      </div>
     </div>
-  </div>
 
-  <!-- Seção Benefícios (cards já com laranja e verde suave) -->
-  <div class="reveal" id="beneficios">
-    <div class="section-title">🧠 Organização que faz sentido</div>
-    <div class="section-desc">Você nunca mais vai precisar procurar aquele arquivo importante em meio a centenas de downloads.</div>
-    <div class="benefit-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">⚡</div>
-        <h4>Menos fricção</h4>
-        <div style="color: var(--text-muted); font-size: 0.85rem;">Clique em "Organizar" e volte ao que importa. O resto acontece sozinho.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📂</div>
-        <h4>Pastas inteligentes</h4>
-        <div style="color: var(--text-muted); font-size: 0.85rem;">Financeiro, Estudos, Contratos, Imagens, Planilhas, Arquivos Antigos e mais.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🔍</div>
-        <h4>Encontre em segundos</h4>
-        <div style="color: var(--text-muted); font-size: 0.85rem;">Sem rolar uma lista infinita. Cada tipo de arquivo tem seu lugar.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">💻</div>
-        <h4>Portátil e direto</h4>
-        <div style="color: var(--text-muted); font-size: 0.85rem;">Abra o .exe, escolha a pasta Downloads, clique e pronto. Zero instalação.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Before & after dinâmico -->
-  <div class="reveal">
-    <div class="section-title">📁 Antes & Depois</div>
-    <div class="section-desc">Visualize a diferença entre uma pasta Downloads caótica e um sistema onde tudo tem uma casa.</div>
-    <div class="flow-comparison">
-      <div class="flow-card">
-        <div class="flow-badge">🚨 ANTES (bagunça total)</div>
-        <div class="file-list" id="beforeList">
-          <span class="file-chip">nf_agosto_2024.pdf</span>
-          <span class="file-chip">imagem_fundo_site.png</span>
-          <span class="file-chip">contrato_locacao.docx</span>
-          <span class="file-chip">dados_vendas_2025.xlsx</span>
-          <span class="file-chip">artigo_ia_generativa.pdf</span>
-          <span class="file-chip">print_erro_sistema.jpg</span>
-          <span class="file-chip">guia_imposto_renda.pdf</span>
-          <span class="file-chip">orcamento_obras.xlsx</span>
+    <!-- FINAL CTA CORRIGIDO: cores alinhadas com o restante (laranja como destaque secundário, verde principal) -->
+    <div class="final-cta-section reveal">
+      <div class="final-wrapper">
+        <div class="final-text">
+          <h3>Transforme sua pasta Downloads em um lugar que você <span style="color:#FFA726;">não precisa mais
+              organizar</span>.</h3>
+          <div style="color: var(--text-muted); margin-top: 8px;">Baixe o executável, aponte para sua pasta de Downloads
+            e clique em Organizar. Em segundos, o caos vira pastas claras.</div>
+          <div class="meta-pills">
+            <span class="pill-meta"><span class="dot-green"></span> Sem instalação · executável portátil</span>
+            <span class="pill-meta"><span class="dot-green"></span> Funciona em qualquer Windows 10/11</span>
+            <span class="pill-meta"><span class="dot-green"></span> Atualizações gratuitas</span>
+          </div>
         </div>
-      </div>
-      <div class="flow-card">
-        <div class="flow-badge">✨ DEPOIS (organizado pelo software)</div>
-        <div class="file-list" id="afterList">
-          <span class="file-chip folder-chip">📁 Financeiro/</span>
-          <span class="file-chip folder-chip">📁 Contratos/</span>
-          <span class="file-chip folder-chip">📁 Estudos/</span>
-          <span class="file-chip folder-chip">📁 Imagens/</span>
-          <span class="file-chip folder-chip">📁 Planilhas/</span>
-          <span class="file-chip folder-chip">📁 Documentos fiscais/</span>
-        </div>
-        <div style="font-size:0.7rem; margin-top: 12px; color:#FFA726;">✔️ Nenhum arquivo solto — tudo classificado</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FINAL CTA CORRIGIDO: cores alinhadas com o restante (laranja como destaque secundário, verde principal) -->
-  <div class="final-cta-section reveal">
-    <div class="final-wrapper">
-      <div class="final-text">
-        <h3>Transforme sua pasta Downloads em um lugar que você <span style="color:#FFA726;">não precisa mais organizar</span>.</h3>
-        <div style="color: var(--text-muted); margin-top: 8px;">Baixe o executável, aponte para sua pasta de Downloads e clique em Organizar. Em segundos, o caos vira pastas claras.</div>
-        <div class="meta-pills">
-          <span class="pill-meta"><span class="dot-green"></span> Sem instalação · executável portátil</span>
-          <span class="pill-meta"><span class="dot-green"></span> Funciona em qualquer Windows 10/11</span>
-          <span class="pill-meta"><span class="dot-green"></span> Atualizações gratuitas</span>
-        </div>
-      </div>
-      <div class="price-block">
-        <div class="price-old">De R$47,00</div>
-        <div class="price-new">R$29,00</div>
-        <div class="cta-group">
-          <button class="btn-primary" id="finalCtaBtn">🎯 COMPRAR AGORA</button>
-          <div style="font-size: 0.65rem; color: #96a7c0;">Pagamento seguro · Acesso vitalício</div>
+        <div class="price-block">
+          <div class="price-old">De R$47,00</div>
+          <div class="price-new">R$29,00</div>
+          <div class="cta-group">
+            <button class="btn-primary" id="finalCtaBtn">🎯 COMPRAR AGORA</button>
+            <div style="font-size: 0.65rem; color: #96a7c0;">Pagamento seguro · Acesso vitalício</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <footer>
-    <div>© Organizador Downloads — foco no que importa, nunca mais perca tempo com arquivos soltos.</div>
-    <div style="display: flex; gap: 16px;">
-      <span>🧹 Interface minimalista</span>
-      <span>⚡ Organização inteligente</span>
-    </div>
-  </footer>
-</main>
+    <footer>
+      <div>© OrganizaFiles — foco no que importa, nunca mais perca tempo com arquivos soltos.</div>
+      <div style="display: flex; gap: 16px;">
+        <span>🧹 Interface minimalista</span>
+        <span>⚡ Organização inteligente</span>
+      </div>
+    </footer>
+  </main>
 
-<script>
-  // Intersection observer para revelar elementos
-  const revealItems = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  revealItems.forEach(el => obs.observe(el));
-
-  // Animação suave no hero visual: simular movimento de arquivos virando pastas (só para engajamento visual)
-  const chaosDiv = document.getElementById('chaosContainer');
-  const orderDiv = document.getElementById('orderContainer');
-  const chaosTags = chaosDiv ? Array.from(chaosDiv.querySelectorAll('.tag')) : [];
-  let animStep = 0;
-
-  function gentleTransition() {
-    if (!chaosTags.length) return;
-    // efeito: a cada 2 segundos um "arquivo" brilha e depois some sutilmente refletindo organização
-    const idx = animStep % chaosTags.length;
-    chaosTags.forEach((t, i) => {
-      if (i === idx) {
-        t.style.opacity = '0.4';
-        t.style.transform = 'scale(0.97)';
-        setTimeout(() => {
-          if (t) {
-            t.style.opacity = '1';
-            t.style.transform = 'scale(1)';
-          }
-        }, 300);
-        // faz piscar a pasta correspondente no after (opcional)
-        if (orderDiv) {
-          const folders = orderDiv.querySelectorAll('.tag-clean');
-          if (folders[idx % folders.length]) {
-            folders[idx % folders.length].style.boxShadow = '0 0 5px #2ECC71';
-            setTimeout(() => {
-              if (folders[idx % folders.length]) folders[idx % folders.length].style.boxShadow = 'none';
-            }, 280);
-          }
+  <script>
+    // Intersection observer para revelar elementos
+    const revealItems = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
         }
-      }
-    });
-    animStep++;
-  }
-  if (chaosTags.length) setInterval(gentleTransition, 1800);
-
-  // Efeito before / after com brilho nos chips de arquivo "sujo"
-  const beforeChips = document.querySelectorAll('#beforeList .file-chip');
-  let beforeIdx = 0;
-  function animateBeforeChips() {
-    if (!beforeChips.length) return;
-    beforeChips.forEach(c => {
-      c.style.opacity = '0.6';
-      c.style.transform = 'translateY(2px)';
-    });
-    const active = beforeChips[beforeIdx % beforeChips.length];
-    if (active) {
-      active.style.opacity = '1';
-      active.style.transform = 'translateY(0)';
-      active.style.transition = '0.2s';
-    }
-    beforeIdx++;
-  }
-  if (beforeChips.length) {
-    animateBeforeChips();
-    setInterval(animateBeforeChips, 1300);
-  }
-
-  // GTM / Google Ads conversion (mantendo a lógica original)
-  function gtag_report_conversion(url) {
-    return new Promise((resolve) => {
-      var callback = function () {
-        if (typeof (url) != 'undefined') {
-          window.open(url, '_blank');
-        }
-        resolve(true);
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18054805527/pHoLCNXfrpMcEJfwmaFD',
-        'value': 1.0,
-        'currency': 'BRL',
-        'event_callback': callback
       });
-    });
-  }
+    }, { threshold: 0.2 });
+    revealItems.forEach(el => obs.observe(el));
 
-  const checkoutLink = 'https://pay.kirvano.com/215f2ae7-860c-4e7d-93c2-3baf36f2975b';
+    // Animação suave no hero visual: simular movimento de arquivos virando pastas (só para engajamento visual)
+    const chaosDiv = document.getElementById('chaosContainer');
+    const orderDiv = document.getElementById('orderContainer');
+    const chaosTags = chaosDiv ? Array.from(chaosDiv.querySelectorAll('.tag')) : [];
+    let animStep = 0;
 
-  const heroBtn = document.getElementById('heroCtaBtn');
-  const finalBtn = document.getElementById('finalCtaBtn');
+    function gentleTransition() {
+      if (!chaosTags.length) return;
+      // efeito: a cada 2 segundos um "arquivo" brilha e depois some sutilmente refletindo organização
+      const idx = animStep % chaosTags.length;
+      chaosTags.forEach((t, i) => {
+        if (i === idx) {
+          t.style.opacity = '0.4';
+          t.style.transform = 'scale(0.97)';
+          setTimeout(() => {
+            if (t) {
+              t.style.opacity = '1';
+              t.style.transform = 'scale(1)';
+            }
+          }, 300);
+          // faz piscar a pasta correspondente no after (opcional)
+          if (orderDiv) {
+            const folders = orderDiv.querySelectorAll('.tag-clean');
+            if (folders[idx % folders.length]) {
+              folders[idx % folders.length].style.boxShadow = '0 0 5px #2ECC71';
+              setTimeout(() => {
+                if (folders[idx % folders.length]) folders[idx % folders.length].style.boxShadow = 'none';
+              }, 280);
+            }
+          }
+        }
+      });
+      animStep++;
+    }
+    if (chaosTags.length) setInterval(gentleTransition, 1800);
 
-  if (heroBtn) {
-    heroBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      gtag_report_conversion(checkoutLink);
-    });
-  }
-  if (finalBtn) {
-    finalBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      gtag_report_conversion(checkoutLink);
-    });
-  }
+    // Efeito before / after com brilho nos chips de arquivo "sujo"
+    const beforeChips = document.querySelectorAll('#beforeList .file-chip');
+    let beforeIdx = 0;
+    function animateBeforeChips() {
+      if (!beforeChips.length) return;
+      beforeChips.forEach(c => {
+        c.style.opacity = '0.6';
+        c.style.transform = 'translateY(2px)';
+      });
+      const active = beforeChips[beforeIdx % beforeChips.length];
+      if (active) {
+        active.style.opacity = '1';
+        active.style.transform = 'translateY(0)';
+        active.style.transition = '0.2s';
+      }
+      beforeIdx++;
+    }
+    if (beforeChips.length) {
+      animateBeforeChips();
+      setInterval(animateBeforeChips, 1300);
+    }
 
-  // também garante que os botões tenham consistência visual, sem interferência de cores erradas
-  // Todos os botões .btn-primary já tem verde consistente com identidade visual
-</script>
+    // GTM / Google Ads conversion (mantendo a lógica original)
+    function gtag_report_conversion(url) {
+      return new Promise((resolve) => {
+        var callback = function () {
+          if (typeof (url) != 'undefined') {
+            window.open(url, '_blank');
+          }
+          resolve(true);
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18054805527/pHoLCNXfrpMcEJfwmaFD',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': callback
+        });
+      });
+    }
+
+    const checkoutLink = 'https://pay.kirvano.com/215f2ae7-860c-4e7d-93c2-3baf36f2975b';
+
+    const heroBtn = document.getElementById('heroCtaBtn');
+    const finalBtn = document.getElementById('finalCtaBtn');
+
+    if (heroBtn) {
+      heroBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        gtag_report_conversion(checkoutLink);
+      });
+    }
+    if (finalBtn) {
+      finalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        gtag_report_conversion(checkoutLink);
+      });
+    }
+
+    // também garante que os botões tenham consistência visual, sem interferência de cores erradas
+    // Todos os botões .btn-primary já tem verde consistente com identidade visual
+  </script>
 </body>
+
 </html>
