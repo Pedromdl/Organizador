@@ -9,13 +9,39 @@
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054805527"></script>
+  <!-- Google tag (gtag.js) - Só carrega se veio de anúncio -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-18054805527');
+    // Função para detectar se visitante veio de anúncio do Google
+    function isFromAd() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const gclid = urlParams.get('gclid');
+      const utmSource = urlParams.get('utm_source');
+
+      // Se tem gclid, veio do Google Ads (orgânico ou pago)
+      if (gclid) return true;
+
+      // Fallback: se veio de campanha específica
+      if (utmSource === 'google' || utmSource === 'googleads') return true;
+
+      return false;
+    }
+
+    // Só carrega o Google Ads se veio de anúncio
+    if (isFromAd()) {
+      // Carrega o script dinamicamente
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18054805527';
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-18054805527');
+    } else {
+      // Função vazia para não quebrar referências
+      window.gtag = function () { };
+    }
   </script>
 
   <style>
@@ -698,6 +724,7 @@
       .video-demo-section {
         margin: 40px auto;
       }
+
       .video-caption {
         font-size: 0.7rem;
         padding: 8px 16px;
@@ -787,16 +814,9 @@
       <div class="section-desc" style="text-align: center; margin-left: auto; margin-right: auto;">
         Assista ao vídeo e veja como é simples organizar sua pasta de downloads em apenas um clique.
       </div>
-      
+
       <div class="video-container">
-        <video 
-          controls 
-          autoplay 
-          muted 
-          loop 
-          playsinline 
-          preload="auto"
-        >
+        <video controls autoplay muted loop playsinline preload="auto">
           <source src="video.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
@@ -990,11 +1010,11 @@
   <script>
     // ===== CONFIGURAÇÃO DO AUTOPLAY DO VÍDEO =====
     // Força o autoplay silencioso (necessário para navegadores modernos)
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const video = document.querySelector('.video-container video');
       if (video) {
         // Tenta garantir o autoplay
-        video.play().catch(function(error) {
+        video.play().catch(function (error) {
           console.log("Autoplay foi bloqueado pelo navegador. O usuário precisará clicar para reproduzir.");
           // Exibe uma mensagem sutil para o usuário saber que precisa clicar
           const caption = document.querySelector('.video-caption');
@@ -1006,14 +1026,14 @@
             note.style.opacity = '0.7';
             note.innerHTML = '🔊 Clique no vídeo para ativar o som';
             caption.appendChild(note);
-            
+
             // Remove a mensagem quando o usuário interagir com o vídeo
-            video.addEventListener('click', function() {
+            video.addEventListener('click', function () {
               if (note) note.remove();
             });
           }
         });
-        
+
         // Adiciona evento para quando o vídeo entrar em visibilidade, tentar dar play novamente
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -1094,40 +1114,40 @@
       setInterval(animateBeforeChips, 1300);
     }
 
-    // GTM / Google Ads conversion
-    function gtag_report_conversion(url) {
-      return new Promise((resolve) => {
-        var callback = function () {
-          if (typeof (url) != 'undefined') {
-            window.location.href = url;
-          }
-          resolve(true);
-        };
+    // Google Ads conversion - SÓ CONTA QUEM VEIO DE ANÚNCIO
+    const checkoutLink = 'https://pay.cakto.com.br/v6rhyzd_837875';
+
+    function handleConversionClick(e) {
+      e.preventDefault();
+
+      // Verifica se veio de anúncio
+      const urlParams = new URLSearchParams(window.location.search);
+      const gclid = urlParams.get('gclid');
+
+      if (gclid) {
+        // VEIO DO GOOGLE ADS → conta conversão
         gtag('event', 'conversion', {
           'send_to': 'AW-18054805527/pHoLCNXfrpMcEJfwmaFD',
           'value': 1.0,
           'currency': 'BRL',
-          'event_callback': callback
+          'event_callback': function () {
+            window.location.href = checkoutLink;
+          }
         });
-      });
+      } else {
+        // NÃO VEIO DE ANÚNCIO → só redireciona, sem contar conversão
+        window.location.href = checkoutLink;
+      }
     }
-
-    const checkoutLink = 'https://pay.cakto.com.br/v6rhyzd_837875';
 
     const heroBtn = document.getElementById('heroCtaBtn');
     const finalBtn = document.getElementById('finalCtaBtn');
 
     if (heroBtn) {
-      heroBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        gtag_report_conversion(checkoutLink);
-      });
+      heroBtn.addEventListener('click', handleConversionClick);
     }
     if (finalBtn) {
-      finalBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        gtag_report_conversion(checkoutLink);
-      });
+      finalBtn.addEventListener('click', handleConversionClick);
     }
   </script>
 </body>
