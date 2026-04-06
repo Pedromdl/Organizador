@@ -653,6 +653,56 @@
         justify-content: center;
       }
     }
+
+        /* SEÇÃO DE VÍDEO DEMONSTRATIVO */
+    .video-demo-section {
+      margin: 60px auto;
+      max-width: 900px;
+    }
+
+    .video-container {
+      position: relative;
+      background: #000;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 122, 0, 0.3);
+      margin: 32px 0 20px;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Estilo para o poster (thumb) customizado, se quiser */
+    .video-container video::-webkit-media-controls-poster {
+      background-size: cover;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(255, 122, 0, 0.08);
+      padding: 12px 20px;
+      border-radius: 60px;
+      width: auto;
+      margin: 0 auto;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Ajuste para telas pequenas */
+    @media (max-width: 550px) {
+      .video-demo-section {
+        margin: 40px auto;
+      }
+      .video-caption {
+        font-size: 0.7rem;
+        padding: 8px 16px;
+      }
+    }
   </style>
 </head>
 
@@ -728,6 +778,32 @@
           <span style="background: #FF7A00; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
           O programa lê o conteúdo e distribui automaticamente — nada de pastas soltas.
         </div>
+      </div>
+    </div>
+
+        <!-- SEÇÃO DE VÍDEO DEMONSTRATIVO -->
+    <div class="reveal video-demo-section">
+      <div class="section-title" style="text-align: center;">🚀 Veja o OrganizaFiles em ação</div>
+      <div class="section-desc" style="text-align: center; margin-left: auto; margin-right: auto;">
+        Assista ao vídeo e veja como é simples organizar sua pasta de downloads em apenas um clique.
+      </div>
+      
+      <div class="video-container">
+        <!--
+          IMPORTANTE: 
+          Troque o src="seu-video.mp4" pelo caminho correto do seu arquivo.
+          Exemplo: 
+          - Se o vídeo estiver na mesma pasta da página: src="demo-organizafiles.mp4"
+          - Se estiver em uma subpasta "videos": src="videos/demo-organizafiles.mp4"
+          - Se estiver hospedado em um serviço (Vimeo, YouTube, etc), cole o link de incorporação.
+        -->
+        <video controls preload="metadata">
+          <source src="video.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+      </div>
+      <div class="video-caption">
+        ⚡ Menos de 30 segundos e a desordem vira pastas organizadas por tipo, nome e conteúdo.
       </div>
     </div>
 
