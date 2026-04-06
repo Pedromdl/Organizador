@@ -654,7 +654,7 @@
       }
     }
 
-        /* SEÇÃO DE VÍDEO DEMONSTRATIVO */
+    /* SEÇÃO DE VÍDEO DEMONSTRATIVO */
     .video-demo-section {
       margin: 60px auto;
       max-width: 900px;
@@ -781,7 +781,7 @@
       </div>
     </div>
 
-        <!-- SEÇÃO DE VÍDEO DEMONSTRATIVO -->
+    <!-- SEÇÃO DE VÍDEO DEMONSTRATIVO COM AUTOPLAY MUDO E LOOP -->
     <div class="reveal video-demo-section">
       <div class="section-title" style="text-align: center;">🚀 Veja o OrganizaFiles em ação</div>
       <div class="section-desc" style="text-align: center; margin-left: auto; margin-right: auto;">
@@ -789,15 +789,14 @@
       </div>
       
       <div class="video-container">
-        <!--
-          IMPORTANTE: 
-          Troque o src="seu-video.mp4" pelo caminho correto do seu arquivo.
-          Exemplo: 
-          - Se o vídeo estiver na mesma pasta da página: src="demo-organizafiles.mp4"
-          - Se estiver em uma subpasta "videos": src="videos/demo-organizafiles.mp4"
-          - Se estiver hospedado em um serviço (Vimeo, YouTube, etc), cole o link de incorporação.
-        -->
-        <video controls preload="metadata">
+        <video 
+          controls 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          preload="auto"
+        >
           <source src="video.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
@@ -989,6 +988,44 @@
   </main>
 
   <script>
+    // ===== CONFIGURAÇÃO DO AUTOPLAY DO VÍDEO =====
+    // Força o autoplay silencioso (necessário para navegadores modernos)
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.querySelector('.video-container video');
+      if (video) {
+        // Tenta garantir o autoplay
+        video.play().catch(function(error) {
+          console.log("Autoplay foi bloqueado pelo navegador. O usuário precisará clicar para reproduzir.");
+          // Exibe uma mensagem sutil para o usuário saber que precisa clicar
+          const caption = document.querySelector('.video-caption');
+          if (caption && !caption.querySelector('.autoplay-note')) {
+            const note = document.createElement('div');
+            note.className = 'autoplay-note';
+            note.style.fontSize = '0.7rem';
+            note.style.marginTop = '6px';
+            note.style.opacity = '0.7';
+            note.innerHTML = '🔊 Clique no vídeo para ativar o som';
+            caption.appendChild(note);
+            
+            // Remove a mensagem quando o usuário interagir com o vídeo
+            video.addEventListener('click', function() {
+              if (note) note.remove();
+            });
+          }
+        });
+        
+        // Adiciona evento para quando o vídeo entrar em visibilidade, tentar dar play novamente
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && video.paused) {
+              video.play().catch(e => console.log("Ainda bloqueado:", e));
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(video);
+      }
+    });
+
     // Intersection observer para revelar elementos
     const revealItems = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver((entries) => {
@@ -1062,7 +1099,7 @@
       return new Promise((resolve) => {
         var callback = function () {
           if (typeof (url) != 'undefined') {
-            window.location.href = url;  // ✅ MUDANÇA: mesma aba, sem popup blocker
+            window.location.href = url;
           }
           resolve(true);
         };
@@ -1077,8 +1114,6 @@
 
     const checkoutLink = 'https://pay.cakto.com.br/v6rhyzd_837875';
 
-    // 
-    // https://pay.kirvano.com/215f2ae7--4e7d-93c2-3baf36f2975b
     const heroBtn = document.getElementById('heroCtaBtn');
     const finalBtn = document.getElementById('finalCtaBtn');
 
