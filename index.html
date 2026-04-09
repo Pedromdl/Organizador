@@ -9,39 +9,13 @@
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet">
 
-  <!-- Google tag (gtag.js) - Só carrega se veio de anúncio -->
+  <!-- Google tag (gtag.js) - Carrega para TODOS os visitantes -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054805527"></script>
   <script>
-    // Função para detectar se visitante veio de anúncio do Google
-    function isFromAd() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const gclid = urlParams.get('gclid');
-      const utmSource = urlParams.get('utm_source');
-
-      // Se tem gclid, veio do Google Ads (orgânico ou pago)
-      if (gclid) return true;
-
-      // Fallback: se veio de campanha específica
-      if (utmSource === 'google' || utmSource === 'googleads') return true;
-
-      return false;
-    }
-
-    // Só carrega o Google Ads se veio de anúncio
-    if (isFromAd()) {
-      // Carrega o script dinamicamente
-      var script = document.createElement('script');
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18054805527';
-      script.async = true;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'AW-18054805527');
-    } else {
-      // Função vazia para não quebrar referências
-      window.gtag = function () { };
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-18054805527');
   </script>
 
   <style>
@@ -1114,30 +1088,20 @@
       setInterval(animateBeforeChips, 1300);
     }
 
-    // Google Ads conversion - SÓ CONTA QUEM VEIO DE ANÚNCIO
+    // Google Ads conversion - Evento begin_checkout (inicialização de compra)
     const checkoutLink = 'https://pay.cakto.com.br/v6rhyzd_837875';
 
     function handleConversionClick(e) {
       e.preventDefault();
 
-      // Verifica se veio de anúncio
-      const urlParams = new URLSearchParams(window.location.search);
-      const gclid = urlParams.get('gclid');
-
-      if (gclid) {
-        // VEIO DO GOOGLE ADS → conta conversão
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18054805527/pHoLCNXfrpMcEJfwmaFD',
-          'value': 1.0,
-          'currency': 'BRL',
-          'event_callback': function () {
-            window.location.href = checkoutLink;
-          }
-        });
-      } else {
-        // NÃO VEIO DE ANÚNCIO → só redireciona, sem contar conversão
-        window.location.href = checkoutLink;
-      }
+      gtag('event', 'begin_checkout', {
+        'send_to': 'AW-18054805527/pHoLCNXfrpMcEJfwmaFD',
+        'value': 1.0,
+        'currency': 'BRL',
+        'event_callback': function () {
+          window.location.href = checkoutLink;
+        }
+      });
     }
 
     const heroBtn = document.getElementById('heroCtaBtn');
