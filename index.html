@@ -1095,30 +1095,38 @@
       setInterval(animateBeforeChips, 1300);
     }
 
-    // Google Ads conversion - Evento begin_checkout (inicialização de compra)
+    // Google Ads conversion - Event snippet for Iniciar finalização de compra
     const checkoutLink = 'https://pay.cakto.com.br/v6rhyzd_837875';
 
-    function handleConversionClick(e) {
-      e.preventDefault();
-
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
       gtag('event', 'conversion', {
         'send_to': 'AW-18054805527/fafRCIuJ8pMcEJfwmaFD',
         'value': 1.0,
         'currency': 'BRL',
-        'event_callback': function () {
-          window.location.href = checkoutLink;
-        }
+        'event_callback': callback
       });
+      return false;
     }
 
     const heroBtn = document.getElementById('heroCtaBtn');
     const finalBtn = document.getElementById('finalCtaBtn');
 
     if (heroBtn) {
-      heroBtn.addEventListener('click', handleConversionClick);
+      heroBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        gtag_report_conversion(checkoutLink);
+      });
     }
     if (finalBtn) {
-      finalBtn.addEventListener('click', handleConversionClick);
+      finalBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        gtag_report_conversion(checkoutLink);
+      });
     }
   </script>
 </body>
