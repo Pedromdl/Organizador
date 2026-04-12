@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrganizaFiles — Caos zero na sua pasta</title>
+  <title>OrganizaFiles — Organize sua pasta Downloads em 1 clique (R$19,90)</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet">
@@ -17,7 +17,6 @@
     gtag('js', new Date());
     gtag('config', 'AW-18054805527');
 
-    // Evento de visualização de página (secundário)
     gtag('event', 'conversion', {
       'send_to': 'AW-18054805527/SX_WCKOK-ZgcEJfwmaFD',
       'value': 1.0,
@@ -63,7 +62,6 @@
       padding: 28px 24px 60px;
     }
 
-    /* header */
     header {
       display: flex;
       flex-wrap: wrap;
@@ -127,7 +125,50 @@
       box-shadow: 0 0 6px var(--cta-green);
     }
 
-    /* hero grid */
+    /* PRICE TAG NO HERO - DESTAQUE ABSOLUTO */
+    .price-badge-hero {
+      background: linear-gradient(135deg, rgba(255, 122, 0, 0.2), rgba(255, 217, 102, 0.1));
+      border: 1.5px solid var(--price-gold);
+      border-radius: 60px;
+      padding: 8px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .price-badge-hero .label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .price-badge-hero .value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--price-gold);
+      line-height: 1;
+    }
+
+    .price-badge-hero .old-value {
+      font-size: 0.9rem;
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    .payment-note {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 0.7rem;
+      color: var(--price-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -217,7 +258,6 @@
       color: var(--cta-green);
     }
 
-    /* visual grid (caos → ordem animado) */
     .visual-panel {
       background: rgba(10, 18, 28, 0.7);
       backdrop-filter: blur(8px);
@@ -280,7 +320,6 @@
       gap: 8px;
     }
 
-    /* BENEFITS SECTION */
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -324,7 +363,6 @@
       margin-bottom: 8px;
     }
 
-    /* TESTIMONIALS SECTION */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -388,7 +426,6 @@
       color: var(--text-muted);
     }
 
-    /* CONTACT SECTION */
     .contact-section {
       margin: 48px 0 32px;
       background: linear-gradient(125deg, rgba(255, 122, 0, 0.08), rgba(46, 204, 113, 0.05));
@@ -474,7 +511,6 @@
       margin-top: 10px;
     }
 
-    /* before / after flow */
     .flow-comparison {
       background: rgba(0, 0, 0, 0.4);
       border-radius: 32px;
@@ -527,7 +563,6 @@
       color: #bcf0d4;
     }
 
-    /* FINAL CTA */
     .final-cta-section {
       margin: 48px 0 32px;
       background: linear-gradient(125deg, rgba(255, 122, 0, 0.12), rgba(46, 204, 113, 0.08));
@@ -619,7 +654,6 @@
       color: #8e9aaf;
     }
 
-    /* animações reveal */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
@@ -659,9 +693,12 @@
         width: 100%;
         justify-content: center;
       }
+
+      .price-badge-hero .value {
+        font-size: 1.5rem;
+      }
     }
 
-    /* SEÇÃO DE VÍDEO DEMONSTRATIVO */
     .video-demo-section {
       margin: 60px auto;
       max-width: 900px;
@@ -683,11 +720,6 @@
       display: block;
     }
 
-    /* Estilo para o poster (thumb) customizado, se quiser */
-    .video-container video::-webkit-media-controls-poster {
-      background-size: cover;
-    }
-
     .video-caption {
       text-align: center;
       font-size: 0.85rem;
@@ -700,7 +732,6 @@
       backdrop-filter: blur(4px);
     }
 
-    /* Ajuste para telas pequenas */
     @media (max-width: 550px) {
       .video-demo-section {
         margin: 40px auto;
@@ -726,22 +757,36 @@
       <div class="header-pill"><span></span> ⚡ Um clique, pastas impecáveis</div>
     </header>
 
-    <!-- Hero principal -->
+    <!-- Hero principal com PREÇO EM DESTAQUE ABSOLUTO -->
     <div class="hero">
       <div class="hero-left reveal">
         <div class="hero-tag">✨ SEM DRAG AND DROP | SEM INSTALAÇÃO</div>
+
+        <!-- BADGE DE PREÇO - VISÍVEL IMEDIATAMENTE -->
+        <div class="price-badge-hero">
+          <span class="label">💰 APENAS</span>
+          <span class="value">R$19,90</span>
+          <span class="old-value">de R$30,00</span>
+        </div>
+
         <h1>Pare de arrastar arquivos.<br>Clique uma vez.</h1>
         <div class="hero-sub">
           O <strong style="color:#FF7A00">OrganizaFiles</strong> analisa tipo, nome e conteúdo dos seus arquivos
           e os envia para pastas inteligentes: <strong>Financeiro, Estudos, Contratos, Imagens, Planilhas</strong> e
           muito mais.
         </div>
+
         <div class="hero-cta-group">
-          <button class="btn-primary" id="heroCtaBtn">📥 QUERO ACABAR COM A BAGUNÇA</button>
+          <button class="btn-primary" id="heroCtaBtn">💰 COMPRAR AGORA POR R$19,90</button>
+
+          <!-- PAGAMENTO E GARANTIA -->
+          <div class="payment-note">
+            <span>💳</span> Pagamento único · Acesso vitalício · PIX ou Cartão
+          </div>
+
           <div class="hero-cta-subtext" style="font-size:0.7rem; color:#a0abb8; margin-top: 8px;">✔️ Portátil · Sem
             cadastro · Funciona em 1 clique</div>
 
-          <!-- GARANTIA 1 -->
           <div
             style="background: rgba(46, 204, 113, 0.08); border-left: 3px solid #2ECC71; border-radius: 8px; padding: 10px 14px; margin-top: 14px;">
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
@@ -751,6 +796,7 @@
             </div>
           </div>
         </div>
+
         <div class="hero-benefits-mini">
           <div class="mini-card"><strong>⏱️ Minutos economizados</strong><br>por dia, horas por mês</div>
           <div class="mini-card"><strong>🧹 Downloads limpa</strong><br>organização contínua sob demanda</div>
@@ -789,7 +835,7 @@
       </div>
     </div>
 
-    <!-- SEÇÃO DE VÍDEO DEMONSTRATIVO COM AUTOPLAY MUDO E LOOP -->
+    <!-- SEÇÃO DE VÍDEO DEMONSTRATIVO -->
     <div class="reveal video-demo-section">
       <div class="section-title" style="text-align: center;">🚀 Veja o OrganizaFiles em ação</div>
       <div class="section-desc" style="text-align: center; margin-left: auto; margin-right: auto;">
@@ -964,40 +1010,38 @@
           </div>
         </div>
         <div class="price-block">
-          <div class="price-old">De R$47,00</div>
-          <div class="price-new">R$29,00</div>
+          <div class="price-old">De R$30,00</div>
+          <div class="price-new">R$19,90</div>
 
-          <!-- GARANTIA 2 (dentro do card de preço) -->
           <div style="background: rgba(46, 204, 113, 0.1); border-radius: 12px; padding: 5px 8px; margin: 10px 0;">
             <span style="font-size: 0.65rem; color: #2ECC71; font-weight: 500;">🛡️ Garantia de 7 dias · Risco
               zero</span>
           </div>
 
           <div class="cta-group">
-            <button class="btn-primary" id="finalCtaBtn">🎯 COMPRAR AGORA</button>
+            <button class="btn-primary" id="finalCtaBtn">💰 COMPRAR R$19,90</button>
             <div style="font-size: 0.65rem; color: #96a7c0;">Pagamento seguro · Acesso vitalício</div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <footer>
-          <div>© OrganizaFiles — foco no que importa, nunca mais perca tempo com arquivos soltos.</div>
-          <div style="display: flex; gap: 16px;">
-            <span>🧹 Interface minimalista</span>
-            <span>⚡ Organização inteligente</span>
-          </div>
-        </footer>
+    <footer>
+      <div>© OrganizaFiles — foco no que importa, nunca mais perca tempo com arquivos soltos.</div>
+      <div style="display: flex; gap: 16px;">
+        <span>🧹 Interface minimalista</span>
+        <span>⚡ Organização inteligente</span>
+      </div>
+    </footer>
   </main>
 
   <script>
-    // ===== CONFIGURAÇÃO DO AUTOPLAY DO VÍDEO =====
-    // Força o autoplay silencioso (necessário para navegadores modernos)
+    // Autoplay do vídeo
     document.addEventListener('DOMContentLoaded', function () {
       const video = document.querySelector('.video-container video');
       if (video) {
-        // Tenta garantir o autoplay
         video.play().catch(function (error) {
-          console.log("Autoplay foi bloqueado pelo navegador. O usuário precisará clicar para reproduzir.");
-          // Exibe uma mensagem sutil para o usuário saber que precisa clicar
+          console.log("Autoplay foi bloqueado pelo navegador.");
           const caption = document.querySelector('.video-caption');
           if (caption && !caption.querySelector('.autoplay-note')) {
             const note = document.createElement('div');
@@ -1007,15 +1051,12 @@
             note.style.opacity = '0.7';
             note.innerHTML = '🔊 Clique no vídeo para ativar o som';
             caption.appendChild(note);
-
-            // Remove a mensagem quando o usuário interagir com o vídeo
             video.addEventListener('click', function () {
               if (note) note.remove();
             });
           }
         });
 
-        // Adiciona evento para quando o vídeo entrar em visibilidade, tentar dar play novamente
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting && video.paused) {
@@ -1095,7 +1136,7 @@
       setInterval(animateBeforeChips, 1300);
     }
 
-    // Google Ads conversion - Event snippet for Iniciar finalização de compra
+    // Google Ads conversion
     const checkoutLink = 'https://pay.cakto.com.br/v6rhyzd_837875';
 
     function gtag_report_conversion(url) {
